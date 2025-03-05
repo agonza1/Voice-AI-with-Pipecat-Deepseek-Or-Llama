@@ -4,10 +4,20 @@ This repository demonstrates a simple AI chatbot with real-time audio/video inte
 
 ## Bot
 
-1. **OpenAI Bot** (Default)
+1. **Ollama Bot** (Default)
+
+   - Uses open source Llama3 conversation
+   - Requires Ollama running locally: https://ollama.com/download with llama3.2:1b. Other Llama supported models can be configured here (e.g: Llama 7b or DeepSeek 7b. I wouldn't recommend more than 7b for local real time testing)
+
+2. **OpenAI Bot**
 
    - Uses gpt-4o for conversation
    - Requires OpenAI API key
+
+3. **DeepSeek Bot**
+
+   - Uses DeepSeek for conversation
+   - Requires DeepSeek API key (has been unstable last month)
 
 ## Client
 
@@ -15,13 +25,6 @@ This repository demonstrates a simple AI chatbot with real-time audio/video inte
 
    - Basic implementation using [Pipecat JavaScript SDK](https://docs.pipecat.ai/client/js/introduction)
    - No framework dependencies
-   - Good for learning the fundamentals
-
-2. **React**
-
-   - Basic impelmentation using [Pipecat React SDK](https://docs.pipecat.ai/client/react/introduction)
-   - Demonstrates the basic client principles with Pipecat React
-
 
 ## Quick Start
 
@@ -41,11 +44,11 @@ This repository demonstrates a simple AI chatbot with real-time audio/video inte
    pip install -r requirements.txt
    ```
 4. Copy env.example to .env and configure:
-   - Add your API keys
    - Choose your bot implementation:
      ```ini
-     BOT_IMPLEMENTATION=      # Options: 'openai' (default) or 'deepseek' or 'ollama' (for running local)
+     BOT_IMPLEMENTATION=      # Options: 'ollama' (default) or 'deepseek' or 'openai'
      ```
+   - Add your API keys (if required)
 5. Start the server:
    ```bash
    python server.py
@@ -54,7 +57,6 @@ This repository demonstrates a simple AI chatbot with real-time audio/video inte
 ### Next, connect using your preferred client app:
 
 - [JavaScript Guide](client/javascript/README.md)
-- [React Guide](client/react/README.md)
 
 ## Important Note
 
@@ -63,9 +65,10 @@ The bot server must be running for any of the client implementations to work. St
 ## Requirements
 
 - Python 3.10+
-- Node.js 16+ (for JavaScript and React implementations)
-- OpenAI API key or Deepseek API key
-- ElevenLabs API key
+- Node.js 16+
+- Daily API key for streaming audio
+- OpenAI API key or Deepseek API key or Ollama running locally for inference
+- ElevenLabs API key for Text to Speech
 - Modern web browser with WebRTC support
 
 ## Project Structure
@@ -74,10 +77,11 @@ The bot server must be running for any of the client implementations to work. St
 simple-chatbot/
 ├── server/              # Bot server implementation
 │   ├── bot-openai.py    # OpenAI bot implementation
+│   ├── bot-deepseek.py  # Deepseek bot implementation
+│   ├── bot-ollama.py    # Ollama bot implementation
 │   ├── runner.py        # Server runner utilities
 │   ├── server.py        # FastAPI server
 │   └── requirements.txt
 └── client/              # Client implementations
-    ├── javascript/      # Daily JavaScript connection
-    └── react/           # Pipecat React client
+    └── javascript/      # Daily JavaScript connection
 ```
