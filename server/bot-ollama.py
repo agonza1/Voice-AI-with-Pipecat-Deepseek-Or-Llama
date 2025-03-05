@@ -159,7 +159,7 @@ async def main():
 
         # Initialize LLM service
         llm = OLLamaLLMService(
-            # model="llama3.2:1b",
+            # model="Deepseek-r1:1.5b",
             model="llama3.2:1b",
             base_url="http://localhost:11434/v1"
         )

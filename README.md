@@ -14,11 +14,6 @@ This repository demonstrates a simple AI chatbot with real-time audio/video inte
    - Uses gpt-4o for conversation
    - Requires OpenAI API key
 
-3. **DeepSeek Bot**
-
-   - Uses DeepSeek for conversation
-   - Requires DeepSeek API key (has been unstable last month)
-
 ## Client
 
 1. **JavaScript**
@@ -67,7 +62,7 @@ The bot server must be running for any of the client implementations to work. St
 - Python 3.10+
 - Node.js 16+
 - Daily API key for streaming audio
-- OpenAI API key or Deepseek API key or Ollama running locally for inference
+- OpenAI API key or Ollama running locally for inference
 - ElevenLabs API key for Text to Speech
 - Modern web browser with WebRTC support
 
@@ -77,7 +72,6 @@ The bot server must be running for any of the client implementations to work. St
 simple-chatbot/
 ├── server/              # Bot server implementation
 │   ├── bot-openai.py    # OpenAI bot implementation
-│   ├── bot-deepseek.py  # Deepseek bot implementation
 │   ├── bot-ollama.py    # Ollama bot implementation
 │   ├── runner.py        # Server runner utilities
 │   ├── server.py        # FastAPI server

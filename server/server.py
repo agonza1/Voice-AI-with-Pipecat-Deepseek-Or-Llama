@@ -64,7 +64,7 @@ def get_bot_file():
         bot_implementation = "openai"
     if bot_implementation not in ["openai", "deepseek", 'ollama']:
         raise ValueError(
-            f"Invalid BOT_IMPLEMENTATION: {bot_implementation}. Must be 'openai' or 'deepseek' or 'ollama'"
+            f"Invalid BOT_IMPLEMENTATION: {bot_implementation}. Must be 'openai' or 'ollama'"
         )
     return f"bot-{bot_implementation}"
 

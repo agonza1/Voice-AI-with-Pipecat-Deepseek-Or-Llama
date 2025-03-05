@@ -16,7 +16,6 @@ Copy `env.example` to `.env` and configure:
 # Required API Keys
 DAILY_API_KEY=           # Your Daily API key
 OPENAI_API_KEY=          # Your OpenAI API key (required for OpenAI bot)
-DEEPSEEK_API_KEY=          # Your DEEPSEEK API key (required for DEEPSEEK bot)
 ELEVENLABS_API_KEY=      # Your ElevenLabs API key
 
 # Bot Selection
