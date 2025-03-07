@@ -1,17 +1,20 @@
 # Simple Chatbot
 
-This repository demonstrates a simple AI chatbot with real-time audio/video interaction, implemented using different client and server options. The bot server supports multiple AI backends, and you can connect to it using five different client approaches.
+This repository demonstrates a simple AI chatbot with real-time audio/video interaction, implemented using different client and server options. The bot server supports multiple AI backends, and you can connect to it using multiple client approaches. In this demo we use Daily WebRTC SDK.
+
+![Bot Interface](server/assets/bot01.png)
 
 ## Bot
 
 1. **Ollama Bot** (Default)
 
-   - Uses open source Llama3 conversation
-   - Requires Ollama running locally: https://ollama.com/download with llama3.2:1b. Other Llama supported models can be configured here (e.g: Llama 7b or DeepSeek 7b. I wouldn't recommend more than 7b for local real time testing)
+   - Uses open source Llama3 for conversation
+   - Requires Ollama running locally: https://ollama.com/download with llama3.2:1b. 
+   Other Llama supported models can be configured here (e.g: Llama 7b or DeepSeek 1.5b)
 
 2. **OpenAI Bot**
 
-   - Uses gpt-4o for conversation
+   - Uses gpt-4o-mini for conversation
    - Requires OpenAI API key
 
 ## Client
@@ -34,6 +37,7 @@ This repository demonstrates a simple AI chatbot with real-time audio/video inte
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
+   #you can also use Conda as an alternative
 3. Install requirements:
    ```bash
    pip install -r requirements.txt
@@ -41,7 +45,7 @@ This repository demonstrates a simple AI chatbot with real-time audio/video inte
 4. Copy env.example to .env and configure:
    - Choose your bot implementation:
      ```ini
-     BOT_IMPLEMENTATION=      # Options: 'ollama' (default) or 'deepseek' or 'openai'
+     BOT_IMPLEMENTATION=      # Options: 'ollama' (default) or 'openai'
      ```
    - Add your API keys (if required)
 5. Start the server:
@@ -51,7 +55,7 @@ This repository demonstrates a simple AI chatbot with real-time audio/video inte
 
 ### Next, connect using your preferred client app:
 
-- [JavaScript Guide](client/javascript/README.md)
+- [JavaScript Guide](https://github.com/pipecat-ai/pipecat/blob/main/examples/simple-chatbot/client/javascript/README.md)
 
 ## Important Note
 
